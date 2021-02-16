@@ -1,0 +1,287 @@
+@import "lib/vars";
+@import "lib/mixins";
+@import "lib/reboot";
+@import "lib/fontawesome/font-awesome";
+@import "lib/fontface";
+@import "lib/keyframes";
+
+* {
+    // border:solid 1px pink;
+}
+
+html,
+body {
+    font-size: $base * 2;
+    font-family: $font_family_base;
+    line-height: $base * 3;
+    color: $body_color;
+    min-height: 100vh;
+}
+.main {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    // height: 100vh;
+    .main_navigation {
+        padding: 1rem;
+        margin-left: 2rem;
+        .fa-twitter{
+            size: 3rem;
+        }
+        .side_menu{
+            
+            .menu_tw{
+                padding-top: 2rem;
+                
+                ul{
+                    text-decoration: none;
+                    li{
+                        padding-bottom: 2rem;
+                        font-size: 1.5rem;
+                        list-style: none;
+                        
+                        font-weight: bold;
+                        span{
+                            padding-right: 2rem;
+                        }
+
+                    }
+                    li:hover{
+                        color: rgb(59, 162, 202);
+                    }
+                }
+            }
+            .night{
+                background-color: rgb(59, 162, 202);
+                border-radius: 50px;
+                border: none;
+                color: white;
+                
+                padding: 0.7;
+                width: 100%;
+                .fa-moon-o{
+                    padding-left: 0.5rem;
+                }
+            }
+            .añadir_tweet{
+                background-color: rgb(59, 162, 202);
+                border-radius: 50px;
+                border: none;
+                color: white;
+                
+                padding: 0.7;
+                width: 100%;
+                margin-top: 1rem;
+            }
+
+        }
+    }
+    .home {
+        display: grid;
+        grid-template-rows: auto 1fr 3fr;
+
+        border-right: solid 1px gray;
+        border-left: solid 1px gray;
+        .header {
+            font-weight: bolder;
+            font-size: 1.4rem;
+            padding: 1rem;
+            border-bottom: gray solid 1px;
+        }
+        .formulario {
+            margin-top: 1rem;
+            padding: 0.5rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            border-bottom: solid 1px gray;
+            .tweet {
+                .tweet_body_write {
+                    display: flex;
+
+                    img {
+                        height: 3rem;
+                        width: 3rem;
+                        border-radius: 50px;
+                    }
+                    textarea {
+                        background-color: rgb(0, 0, 0);
+                        color: white;
+                        width: 100%;
+                        height: 8rem;
+                        border: none;
+                        margin: 0.5rem;
+                        border-bottom: solid 1px gray;
+                        font-size: 1.5rem;
+                    }
+                }
+                .tweet_footer {
+                    display: flex;
+                    flex-direction: row-reverse;
+                    justify-content: space-between;
+                    .icons {
+                        color: rgb(59, 162, 202);
+                        margin-left: 3rem;
+                        font-size: 1.2rem;
+                        .fa-picture-o {
+                            padding: 1rem;
+                        }
+                        .fa-bar-chart {
+                            padding: 1rem;
+                        }
+                        .fa-smile-o {
+                            padding: 1rem;
+                        }
+                        .fa-calendar-o {
+                            padding: 1rem;
+                        }
+                    }
+                    button {
+                        background-color: rgb(59, 162, 202);
+                        color: white;
+                        border-radius: 50px;
+                        width: 7rem;
+                        border: none;
+                        font-weight: bold;
+                        margin-right: 0.8rem;
+                
+                    }
+                }
+            }
+        }
+        .tweets_feed {
+            .tweet01 {
+                .principal {
+                    display: flex;
+                    padding-left: 1rem;
+                    padding-top: 1rem;
+                    img {
+                        height: 3rem;
+                        width: 3rem;
+                        border-radius: 50px;
+                        margin-right: 1rem;
+                    }
+                    .user_name {
+                        padding-right: 0.5rem;
+                
+                    }
+                    .user_direction{
+                        color:grey;
+                        padding-right: 0.5rem;
+                    }
+                    .hora{
+                        color: gray;
+                        padding-right: 1rem;
+                  
+                    
+                   
+                    }
+                }
+                .texto_tweet{
+                    margin-top: -1rem;
+                    margin-left: 2rem;
+                    padding-left: 3rem;
+                }
+                .footer_hecho {
+                    display: flex;
+                    border-bottom: 1px solid grey;
+                    
+                    justify-content: center;
+
+                    .iconos {
+                        display: flex;
+                        padding-left: 2.1rem;
+                        
+                        justify-content: center;
+                        color: gray;
+
+                        .comments {
+                            padding: 1rem;
+                            padding-right: 5rem;
+                            display: flex;
+                            .fa-comment {
+                                padding-right: 0.5rem;
+                                
+                            }
+                            .comment_number{
+                                color: gray;
+
+                              
+                               
+                            }
+                            .fa-comment:hover{
+                                color: rgb(59, 162, 202);
+                            }
+                        }
+
+                        .retweets {
+                            padding: 1rem;
+                            padding-right: 5rem;
+                            display: flex;
+                            .fa-retweet {
+                                padding-right: 0.5rem;
+                                
+                            }
+                            .retweet_number{
+                                color: gray;
+                               
+                               
+                            }
+                            .fa-retweet:hover{
+                                color: greenyellow;
+                            }
+                        }
+
+                        
+                        .likes {
+                            padding: 1rem;
+                            padding-right: 5rem;
+                            display: flex;
+                            .fa-heart {
+                                padding-right: 0.5rem;
+                                
+                            }
+                            .like_number{
+                                color:gray;
+                               
+                            }
+                            .fa-heart:hover{
+                                color: red;
+                            }
+                        }
+                        .fa-upload {
+                            padding: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .aside {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        
+        .amount{
+            align-self: center;
+            font-weight: bold;
+            
+        }
+        .reset{
+            background-color: rgb(59, 162, 202);
+           border-radius: 50px;
+           border: none;
+           color: white;
+           margin:2rem;
+           .fa-trash{
+               padding-left: 0.7rem;
+           }
+           
+        }
+        .reset:hover{
+            background-color: rgb(117, 32, 32);
+        }
+    }
+}
